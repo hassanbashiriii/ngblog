@@ -1,0 +1,28 @@
+<div class="valign-wrapper" ng-model="posts">
+	<h3 class="valign center-block">{{posts[wichItem].title}}</h3>
+</div>	
+
+<!-- post content -->
+<div class="row">
+	<div class="col s10 offset-s1">
+	  <div class="card">
+	    <div class="card-image">
+	      <img src="{{posts[wichItem].image}}">
+	        </div>
+	        	<div class="card-content">   
+	              <h6 class="post-intro"> {{posts[wichItem].intro}} </h6>
+	        	</div>
+	    <div class="card-action post-body">
+	      <p>{{posts[wichItem].body}}</p>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<!-- next and previous links -->
+<div class="row">
+	<div class="col s10 offset-s1">
+		<a href="#/posts/{{prevItem}}" class="left-align nxt-pre-link">{{posts[prevItem].title}}</a>
+		<a href="#/posts/{{nextItem}}" class="right-align nxt-pre-link">{{posts[nextItem].title}}</a>
+	</div>
+</div>

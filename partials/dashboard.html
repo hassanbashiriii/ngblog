@@ -1,0 +1,44 @@
+<div class="valign-wrapper" ng-model="posts">
+	<h3 class="valign center-block">پست ها</h3>
+</div>	
+
+<div class="valign-wrapper" ng-model="posts">
+	<span class="valign center-block">
+		<a href="#" ng-click="authObj.$unauth()">Logout</a>
+	</span>
+</div>
+
+ <table class="centered highlight bordered">
+        <thead>
+          <tr>
+              <th data-field="id">عنوان</th>
+              <th data-field="name">تاریخ</th>
+              <th data-field="price">نویسنده</th>
+          </tr>
+        </thead>
+
+        <tbody>
+	    	<tr>
+	            <td>
+		            <a href="#/addpost" class="tooltipped link-icon" data-position="top" data-delay="50" ng-click="removeTooltip()" data-tooltip="اضافه کردن">
+		        		<i class="material-icons icons">add</i>
+		        	</a>
+		        	<i class="table-i"> پست جدید</i>
+	        	</td>
+	            <td>-</td>
+	            <td>-</td>
+	      	</tr>
+
+	      <tr ng-repeat="(key, post) in posts">
+	        <td>
+	        	<a class="tooltipped link-icon" data-position="top" data-delay="50" data-tooltip="پاک کردن"
+	        	repeat-done="initTooltip()">
+	        		<i class="material-icons icons" ng-click="deletePost(key); removeTooltip()">delete</i>
+	        	</a>
+
+	        	<i class="table-i">{{post.title}}</i></td>
+	        <td>{{post.date}}</td>
+	        <td>{{post.author}}</td>
+	      </tr>
+    </tbody>
+</table>
